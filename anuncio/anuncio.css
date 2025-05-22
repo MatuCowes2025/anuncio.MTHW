@@ -1,0 +1,48 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #111;
+  font-family: sans-serif;
+}
+
+.anuncio-container {
+  width: 100%;
+  height: 100%;
+  max-width: 300px;
+  max-height: 600px;
+  text-align: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.anuncio-container img {
+  max-width: 80px;
+  margin-bottom: 20px;
+}
+
+.anuncio-container h1 {
+  font-size: 20px;
+  margin: 0 0 20px 0;
+}
+
+.anuncio-container a {
+  background-color: white;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.anuncio-container a:hover {
+  background-color: #ccc;
+}
