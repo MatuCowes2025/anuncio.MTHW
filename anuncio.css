@@ -1,48 +1,98 @@
-body, html {
-  height: 100%;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #111;
-  font-family: sans-serif;
-}
-
-.anuncio-container {
-  width: 100%;
-  height: 100%;
-  max-width: 300px;
-  max-height: 600px;
-  text-align: center;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
+* {
   box-sizing: border-box;
 }
-
-.anuncio-container img {
-  max-width: 80px;
-  margin-bottom: 20px;
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
-.anuncio-container h1 {
-  font-size: 20px;
-  margin: 0 0 20px 0;
-}
-
-.anuncio-container a {
-  background-color: white;
-  color: black;
-  padding: 10px 20px;
-  border-radius: 8px;
+.ad-container {
+  display: flex;
+  width: 728px;
+  height: 90px;
   text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
+  cursor: pointer;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  color: white;
+}
+.ad-left, .ad-right {
+  width: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ad-left {
+  background: url('images/fondo.jpg') center center/cover no-repeat;
+  position: relative;
 }
 
-.anuncio-container a:hover {
-  background-color: #ccc;
+}
+.ad-logo {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  height: 40px; /* <-- achicamos el logo */
+  width: auto;
+  z-index: 2;
+  background: rgba(255,255,255,0.8);
+  padding: 4px 6px;
+  border-radius: 4px;
+}
+.ad-right {
+  background-color: #000;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 20px;
+  text-align: center;
+}
+.ad-text {
+  margin: 0 0 10px 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: white;
+  text-shadow: none;
+}
+.ad-button {
+  background-color: #000; /* <-- ahora negro */
+  color: white;
+  padding: 8px 20px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 1rem;
+  user-select: none;
+  border: 1px solid white;
+  transition: background-color 0.3s ease;
+}
+.ad-button:hover {
+  background-color: #222;
+}
+
+/* RESPONSIVO para móviles */
+@media (max-width: 480px) {
+  .ad-container {
+    flex-direction: column;
+    width: 300px;
+    height: 600px;
+  }
+  .ad-left, .ad-right {
+    width: 100%;
+    height: 50%;
+    justify-content: center;
+  }
+  .ad-logo {
+    top: 15px;
+    left: 15px;
+    height: 40px;
+  }
+  .ad-text {
+    font-size: 1.6rem;
+  }
+  .ad-button {
+    font-size: 1.3rem;
+    padding: 12px 30px;
+  }
 }
