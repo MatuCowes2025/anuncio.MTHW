@@ -1,116 +1,89 @@
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-body, html {
-  margin: 0;
-  padding: 0;
+body {
+  font-family: 'Montserrat', sans-serif;
+  width: 100%;
   height: 100%;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .ad-container {
   display: flex;
-  width: 728px;
-  height: 90px;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
   border-radius: 6px;
   overflow: hidden;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
-/* LADO IZQUIERDO */
 .ad-left {
-  width: 50%;
-  background: url('images/fondo.jpg') center center/cover no-repeat;
-  position: relative;
+  flex: 1;
+  background-image: url('images/fondo.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* LOGO - Se hará que ocupe todo el contenedor izquierdo, tanto vertical como horizontalmente */
-.ad-logo {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100%;    /* Ocupa todo el ancho del contenedor */
-  height: 100%;   /* Ocupa todo el alto del contenedor */
-  object-fit: contain; /* Ajusta la imagen para mantener su proporción sin recortarse */
-  transform: translate(-50%, -50%);
+.ad-left h1 {
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 900;
 }
 
-/* LADO DERECHO */
 .ad-right {
-  width: 50%;
-  background-color: #000;
+  flex: 1;
+  background-color: black;
   color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  padding: 1rem;
+}
+
+.ad-right h2 {
+  font-size: 1.3rem;
   text-align: center;
+  margin-bottom: 1rem;
 }
 
-/* TEXTO */
-.ad-text {
-  margin: 0 0 10px 0;
-  font-size: 1.2rem;
-  font-weight: 600;
-}
-
-/* BOTÓN */
-.ad-button {
-  background-color: #000;
+.ad-right a {
+  padding: 0.6rem 1.4rem;
+  border: 2px solid white;
   color: white;
-  padding: 10px 24px;
-  font-weight: 700;
-  font-size: 1rem;
-  border: 1px solid white;
-  border-radius: 4px;
   text-decoration: none;
-  white-space: nowrap;
-  transition: background-color 0.3s ease;
+  font-weight: bold;
+  border-radius: 6px;
+  transition: background 0.3s, color 0.3s;
 }
 
-.ad-button:hover {
-  background-color: #222;
+.ad-right a:hover {
+  background: white;
+  color: black;
 }
 
-@media (max-width: 480px) {
+@media (max-aspect-ratio: 1/1) {
   .ad-container {
     flex-direction: column;
-    width: 300px;
-    height: auto;
   }
 
   .ad-left,
   .ad-right {
     width: 100%;
-    padding: 20px;
+    height: 50%;
   }
 
-  /* Aseguramos también en móviles que el logo se expanda en ambas direcciones */
-  .ad-logo {
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    transform: translate(-50%, -50%);
-  }
-
-  .ad-right {
-    min-height: 160px;
-  }
-
-  .ad-text {
-    font-size: 1.3rem;
-    margin-bottom: 12px;
-  }
-
-  .ad-button {
+  .ad-right h2 {
     font-size: 1.1rem;
-    padding: 12px 24px;
-    white-space: nowrap;
-    width: fit-content;
-    max-width: 90%;
   }
-}              
+
+  .ad-right a {
+    font-size: 0.9rem;
+  }
+}
