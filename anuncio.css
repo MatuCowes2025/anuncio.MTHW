@@ -36,11 +36,14 @@ body {
 
 .ad-logo {
   position: absolute;
-  color: white;
-  font-size: 2.5rem;
-  font-weight: 900;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+  max-width: 60%;
 }
+
+.ad-logo img {
+  width: 100%;
+  height: auto;
+}
+
 
 .ad-right {
   flex: 1;
